@@ -1,7 +1,7 @@
-package org.jetbrains.plugins.template.services
+package com.github.wszpwsren.completionwithrepohelper.services
 
 import com.intellij.openapi.project.Project
-import org.jetbrains.plugins.template.MyBundle
+import com.github.wszpwsren.completionwithrepohelper.MyBundle
 
 class MyProjectService(project: Project) {
 
