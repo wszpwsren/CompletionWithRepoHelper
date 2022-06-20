@@ -49,7 +49,7 @@ fun toPinyin(str: String, caseType: Int): Array<String?> {
  * @param origin 文本串
  * @param needed 模式串
  */
-fun countContainsSomeChar(origin: String, needed: String): Int {
+fun countContainsSomeChar(origin: String?, needed: String): Int {
     val key = "$origin-$needed"
     PinyinEx.COUNT_CHAR_CACHE[key]?.let {
         return it
@@ -58,9 +58,9 @@ fun countContainsSomeChar(origin: String, needed: String): Int {
     var i = 0
     var j = 0
     while (i < needed.length) {
-        val indexOf = origin.indexOf(needed[i], j++)
+        val indexOf = origin?.indexOf(needed[i], j++)
         if (indexOf != -1) {
-            if (counted.add(indexOf)) {
+            if (counted.add(indexOf!!)) {
                 i++
             }
         } else {
