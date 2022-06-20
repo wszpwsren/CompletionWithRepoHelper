@@ -8,7 +8,6 @@ import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.openapi.util.text.StringUtil
-import pansong291.simplepinyin.Pinyin
 
 /**
  * @author KolRigo
