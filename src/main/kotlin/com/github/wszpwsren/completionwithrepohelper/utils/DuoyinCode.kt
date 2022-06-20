@@ -255,10 +255,10 @@ internal object DuoyinCode {
             ins = (ind + j) / 8
             iny = (ind + j) % 8
             //低8位
-            realIndex[j] = (DUOYIN_CODE[ind + j] and 0xff).toShort()
+            realIndex[j] = (DUOYIN_CODE[ind + j].toInt() and 0xff).toShort()
             //高1位，非0即1
-            if (DUOYIN_CODE_PADDING[ins] and PinyinData.BIT_MASKS.get(7 - iny) !== 0) {
-                realIndex[j] = (realIndex[j] or PinyinData.PADDING_MASK) as Short
+            if (DUOYIN_CODE_PADDING[ins].toInt() and PinyinData.BIT_MASKS.get(7 - iny) != 0) {
+                realIndex[j] = (realIndex[j].toInt() or PinyinData.PADDING_MASK).toShort()
             }
         }
         return realIndex
@@ -270,14 +270,14 @@ internal object DuoyinCode {
         val iny1 = offset % 8
         val iny2 = offset % 4
         //低8位
-        var realIndex: Short = (INDEX_DUOYIN_CODE3[offset] and 0xff).toShort()
+        var realIndex: Short = (INDEX_DUOYIN_CODE3[offset].toInt() and 0xff).toShort()
         //中2位，有00，01，10，11共4种情况
-        var m2Bit = (index_duoyin_code2(ins2) and PinyinData.TWO_BIT_MASKS.get(iny2)) as Short
-        m2Bit = (m2Bit shl 2 * iny2 + 2).toShort()
-        realIndex = (realIndex or m2Bit).toShort()
+        var m2Bit = (index_duoyin_code2(ins2).toInt() and PinyinData.TWO_BIT_MASKS.get(iny2)).toShort()
+        m2Bit = (m2Bit.toInt() shl 2 * iny2 + 2).toShort()
+        realIndex = (realIndex.toInt() or m2Bit.toInt()).toShort()
         //高1位，非0即1
-        if (index_duoyin_code1(ins1) and PinyinData.BIT_MASKS.get(7 - iny1) !== 0) {
-            realIndex = (realIndex or 0x400).toShort()
+        if (index_duoyin_code1(ins1).toInt() and PinyinData.BIT_MASKS.get(7 - iny1) != 0) {
+            realIndex = (realIndex.toInt() or 0x400).toShort()
         }
         return realIndex
     }

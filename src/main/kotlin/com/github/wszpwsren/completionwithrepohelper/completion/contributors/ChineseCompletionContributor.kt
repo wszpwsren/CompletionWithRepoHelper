@@ -8,6 +8,7 @@ import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.openapi.util.text.StringUtil
+import pansong291.simplepinyin.Pinyin
 
 /**
  * @author KolRigo
@@ -44,7 +45,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                 val closest = toPinyin(
                     element.lookupString,
                     Pinyin.FIRST_UP_CASE
-                ).maxByOrNull { str -> countContainsSomeChar(str.toLowerCase(), prefix) }
+                ).maxByOrNull { str -> countContainsSomeChar(str!!.toLowerCase(), prefix) }
                 closest?.let {
                     //todo 完全匹配的优先级需提高
                     val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 100.0 else 5.0

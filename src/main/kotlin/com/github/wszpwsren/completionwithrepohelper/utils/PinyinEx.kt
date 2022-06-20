@@ -15,7 +15,7 @@ class PinyinEx {
          * 笛卡尔积缓存
          */
         @JvmStatic
-        val CARTESIAN_CACHE: MutableMap<String, Array<String>> = ContainerUtil.createSoftValueMap()
+        val CARTESIAN_CACHE: MutableMap<String, Array<String?>> = ContainerUtil.createSoftValueMap()
     }
 }
 
@@ -28,7 +28,7 @@ class PinyinEx {
  * @return 多音字拼接的结果数组
  * @Author tuchg
  */
-fun toPinyin(str: String, caseType: Int): Array<String> {
+fun toPinyin(str: String, caseType: Int): Array<String?> {
     val key = "$str-$caseType"
     PinyinEx.CARTESIAN_CACHE[key]?.let {
         return it

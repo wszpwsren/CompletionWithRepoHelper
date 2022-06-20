@@ -196,7 +196,7 @@ object Pinyin {
             duoyinCode = DuoyinCode.decodeDuoyinIndex(i)
             duoyin = arrayOfNulls(duoyinCode.size)
             for (j in duoyinCode.indices) {
-                duoyin[j] = PinyinData.PINYIN_TABLE.get(duoyinCode[j])
+                duoyin[j] = PinyinData.PINYIN_TABLE.get(duoyinCode[j].toInt())
             }
         }
         return duoyin
@@ -206,10 +206,10 @@ object Pinyin {
         val index1 = offset / 8
         val index2 = offset % 8
         //低8位
-        var realIndex: Short = (indexes[offset] & 0xff)
+        var realIndex: Short = (((indexes[offset]).toInt() and 0xff).toShort())
         //高1位，非0即1
-        if (paddings[index1] and PinyinData.BIT_MASKS.get(index2) !== 0) {
-            realIndex = (realIndex or PinyinData.PADDING_MASK) as Short
+        if ((paddings[index1].toInt() and PinyinData.BIT_MASKS.get(index2)) != 0) {
+            realIndex = (realIndex.toInt() or PinyinData.PADDING_MASK).toShort()
         }
         return realIndex
     }
