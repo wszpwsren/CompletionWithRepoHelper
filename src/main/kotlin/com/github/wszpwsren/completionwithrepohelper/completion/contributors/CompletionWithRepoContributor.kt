@@ -17,7 +17,7 @@ import pansong291.simplepinyin.Pinyin
 // 自定义了的语言
 val languages = arrayOf("Go", "Kotlin", "C#")
 
-open class ChineseCompletionContributor() : CompletionContributor() {
+open class CompletionWithRepoContributor() : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val pluginSettingsState = PluginSettingsState.instance
 
