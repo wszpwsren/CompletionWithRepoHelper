@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.config
+package com.github.wszpwsren.completionwithrepohelper.config
 
 import com.intellij.openapi.components.ServiceManager.getService
 import com.intellij.openapi.components.PersistentStateComponent

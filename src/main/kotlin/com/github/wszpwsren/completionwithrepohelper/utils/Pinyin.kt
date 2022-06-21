@@ -1,4 +1,5 @@
-package pansong291.simplepinyin
+package com.github.wszpwsren.completionwithrepohelper.utils
+
 
 /**
  * @author pansong291

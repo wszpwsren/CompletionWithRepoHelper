@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.completion
+package com.github.wszpwsren.completionwithrepohelper.completion
 
 import com.intellij.codeInsight.completion.InsertionContext
 import com.intellij.codeInsight.lookup.LookupElement

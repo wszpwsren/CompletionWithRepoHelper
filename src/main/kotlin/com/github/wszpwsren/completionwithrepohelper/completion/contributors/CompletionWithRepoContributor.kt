@@ -1,14 +1,14 @@
-package com.github.tuchg.nonasciicodecompletionhelper.completion.contributors
+package com.github.wszpwsren.completionwithrepohelper.completion.contributors
 
-import com.github.tuchg.nonasciicodecompletionhelper.completion.ChineseLookupElement
-import com.github.tuchg.nonasciicodecompletionhelper.completion.ChinesePrefixMatcher
-import com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsState
+import com.github.wszpwsren.completionwithrepohelper.config.PluginSettingsState
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
+import com.github.wszpwsren.completionwithrepohelper.completion.ChineseLookupElement
+import com.github.wszpwsren.completionwithrepohelper.completion.ChinesePrefixMatcher
 import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.openapi.util.text.StringUtil
-import pansong291.simplepinyin.Pinyin
+import com.github.wszpwsren.completionwithrepohelper.utils.Pinyin
 
 /**
  * @author KolRigo

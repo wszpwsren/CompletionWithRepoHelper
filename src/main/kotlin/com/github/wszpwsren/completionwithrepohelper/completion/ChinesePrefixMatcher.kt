@@ -1,10 +1,10 @@
-package com.github.tuchg.nonasciicodecompletionhelper.completion
+package com.github.wszpwsren.completionwithrepohelper.completion
 
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.PlainPrefixMatcher
 import com.intellij.codeInsight.completion.PrefixMatcher
-import pansong291.simplepinyin.Pinyin
+import com.github.wszpwsren.completionwithrepohelper.utils.Pinyin
 
 /**
  * 转换中文使之与IDE内提取标识符进行有效识别的关键类

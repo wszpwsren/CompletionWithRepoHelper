@@ -1,4 +1,5 @@
-package pansong291.simplepinyin
+package com.github.wszpwsren.completionwithrepohelper.utils
+
 
 /**
  * Created by pansong291 on 2018/9/12.
