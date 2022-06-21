@@ -3,16 +3,24 @@
     <id>com.github.wszpwsren.completionwithrepohelper</id>
     <name>CompletionWithRepoHelper</name>
     <vendor>wszpwsren</vendor>
-
+    <description>
+        CompletionWithRepoHelper is a plugin that provides completions from a repository.
+    </description>
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.wszpwsren.completionwithrepohelper.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.wszpwsren.completionwithrepohelper.services.MyProjectService"/>
+        <applicationService
+                serviceImplementation="com.github.wszpwsren.completionwithrepohelper.config.PluginSettingsState"/>
+        <completion.contributor language="any"
+                                order="first"
+                                implementationClass="com.github.wszpwsren.completionwithrepohelper.completion.contributors.CompletionWithRepoContributor"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.wszpwsren.completionwithrepohelper.config.PluginSettingsController"
+                displayName="CWR Helper"/>
+        <notificationGroup id="CWR Group" displayType="STICKY_BALLOON"/>
+
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.wszpwsren.completionwithrepohelper.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
