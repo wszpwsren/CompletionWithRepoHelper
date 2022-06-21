@@ -9,7 +9,7 @@ import javax.swing.JPanel
  * @author wengyongcheng
  * @since 2020/3/1 10:30 下午
  */
-class MyToolWindow(toolWindow: ToolWindow) {
+class RepoWindow(toolWindow: ToolWindow) {
     private var hideButton: JButton? = null
     private var dialogButton: JButton? = null
     var content: JPanel? = null
