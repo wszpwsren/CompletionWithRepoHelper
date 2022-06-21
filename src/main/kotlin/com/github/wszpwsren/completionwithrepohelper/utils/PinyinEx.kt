@@ -1,7 +1,7 @@
 package com.github.tuchg.nonasciicodecompletionhelper.utils
 
-import com.intellij.util.containers.ContainerUtil
 import com.github.wszpwsren.completionwithrepohelper.utils.Pinyin
+import com.intellij.util.containers.ContainerUtil
 
 class PinyinEx {
     companion object {

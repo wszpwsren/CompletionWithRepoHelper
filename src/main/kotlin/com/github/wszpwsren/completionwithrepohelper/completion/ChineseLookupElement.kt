@@ -11,11 +11,11 @@ import javax.swing.Icon
  * @description:
  */
 class ChineseLookupElement(
-    // 原文本
-    private val original: String?,
-    // 取拼音后的文本
-    private val pinyin: String?,
-    private val icon: Icon? = null
+        // 原文本
+        private val original: String?,
+        // 取拼音后的文本
+        private val pinyin: String?,
+        private val icon: Icon? = null
 ) : LookupElement() {
 
     private var lookupElement: LookupElement? = null

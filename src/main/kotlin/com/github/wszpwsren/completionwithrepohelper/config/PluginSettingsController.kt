@@ -30,7 +30,7 @@ class PluginSettingsController : Configurable {
     override fun isModified(): Boolean {
         val settings: PluginSettingsState = PluginSettingsState.instance
         var modified: Boolean =
-            mySettingsComponent?.getForceCompletionStatus()?.equals(settings.enableForceCompletion) == false
+                mySettingsComponent?.getForceCompletionStatus()?.equals(settings.enableForceCompletion) == false
         return modified
     }
 

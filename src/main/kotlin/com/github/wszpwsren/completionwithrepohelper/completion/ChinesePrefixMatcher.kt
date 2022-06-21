@@ -2,9 +2,9 @@ package com.github.wszpwsren.completionwithrepohelper.completion
 
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
+import com.github.wszpwsren.completionwithrepohelper.utils.Pinyin
 import com.intellij.codeInsight.completion.PlainPrefixMatcher
 import com.intellij.codeInsight.completion.PrefixMatcher
-import com.github.wszpwsren.completionwithrepohelper.utils.Pinyin
 
 /**
  * 转换中文使之与IDE内提取标识符进行有效识别的关键类
@@ -27,5 +27,5 @@ class ChinesePrefixMatcher(prefixMatcher: PrefixMatcher) : PlainPrefixMatcher(pr
 
 
     override fun cloneWithPrefix(prefix: String) =
-        if (prefix == this.prefix) this else ChinesePrefixMatcher(originalMatcher!!.cloneWithPrefix(prefix))
+            if (prefix == this.prefix) this else ChinesePrefixMatcher(originalMatcher!!.cloneWithPrefix(prefix))
 }

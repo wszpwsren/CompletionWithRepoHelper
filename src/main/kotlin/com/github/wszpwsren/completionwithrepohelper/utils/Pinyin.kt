@@ -212,7 +212,7 @@ object Pinyin {
         if ((paddings[index1].toInt() and PinyinData.BIT_MASKS.get(index2)) != 0) {
             realIndex = (realIndex.toInt() or PinyinData.PADDING_MASK).toShort()
         }
-        
+
         return realIndex
     }
 }

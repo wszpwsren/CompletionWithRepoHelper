@@ -1,7 +1,7 @@
 package com.github.wszpwsren.completionwithrepohelper.config
 
-import com.intellij.openapi.components.ServiceManager.getService
 import com.intellij.openapi.components.PersistentStateComponent
+import com.intellij.openapi.components.ServiceManager.getService
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
@@ -16,6 +16,7 @@ class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
 
     // 激活强力补全 用于暴力补全部分补全未显示的问题
     var enableForceCompletion: Boolean = false
+    var dictMap : HashMap<String?, String?> = HashMap()
 
     companion object {
         val instance: PluginSettingsState
