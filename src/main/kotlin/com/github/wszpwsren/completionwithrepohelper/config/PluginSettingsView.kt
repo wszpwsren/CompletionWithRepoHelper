@@ -40,13 +40,6 @@ class PluginSettingsView {
         inputPatternChoice.isEditable = false
         // 禁用暂无法实现功能，可通过用户自定义多音字词频解决
         completeMatchStatus.isEnabled = false
-
-//        panel {
-//            row {
-//                myIdeaUserStatus
-//                comment("测试")
-//            }
-//        }
     }
 
     fun getPanel(): JPanel? {
@@ -60,16 +53,6 @@ class PluginSettingsView {
     @NotNull
     fun getUserNameText(): String? {
         return myUserNameText.text
-    }
-
-    fun setUserNameText(@NotNull newText: String?) {
-        myUserNameText.text = newText
-    }
-
-    fun getCompleteMatchStatus(): Boolean = completeMatchStatus.isSelected
-
-    fun setCompleteMatchStatus(newStatus: Boolean) {
-        completeMatchStatus.isSelected = newStatus
     }
 
     fun getForceCompletionStatus(): Boolean = forceCompletionStatus.isSelected

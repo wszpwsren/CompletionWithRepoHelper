@@ -13,27 +13,14 @@ import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
  */
 @State(name = "RCompletionHelperSettings", storages = [(Storage("pinyin_completion_helper.xml"))])
 class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
-    // 提示方式设置，如全拼、五笔等
-    var inputPattern: PatternType = PatternType.全拼
-    // 自定义码表，支持自定义码表 并提供图形支持
-
-    // 用于解决一词多音不正确显示问题的选项
-    var enableCompleteMatch: Boolean = true
 
     // 激活强力补全 用于暴力补全部分补全未显示的问题
     var enableForceCompletion: Boolean = false
-
-    // todo 默认增加一个禁用 Ascii intention 的功能
 
     companion object {
         val instance: PluginSettingsState
             get() = getService(PluginSettingsState::class.java)
     }
-
-    /**
-     * 配置项
-     */
-    var version = "Unknown"
 
     override fun getState() = this
 

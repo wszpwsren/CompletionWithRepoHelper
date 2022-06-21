@@ -15,7 +15,6 @@ class ChinesePrefixMatcher(prefixMatcher: PrefixMatcher) : PlainPrefixMatcher(pr
     private var originalMatcher: PrefixMatcher? = prefixMatcher
 
     override fun prefixMatches(name: String): Boolean {
-//        log.info { "${prefix} - ${name} ${myMatcher.matches(name)}" }
         return if (Pinyin.hasChinese(name)) {
             for (s in toPinyin(name, Pinyin.LOW_CASE)) {
                 if (countContainsSomeChar(s, prefix) >= prefix.length) {

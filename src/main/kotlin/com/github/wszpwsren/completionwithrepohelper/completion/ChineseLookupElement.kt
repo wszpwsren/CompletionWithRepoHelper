@@ -35,7 +35,6 @@ class ChineseLookupElement(
         icon?.let {
             presentation.icon = icon
         }
-
         // 复制原元素类型,包位置,icon等信息
         lookupElement?.renderElement(presentation)
         // 文本【WenBen】
