@@ -4,10 +4,12 @@ import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.github.wszpwsren.completionwithrepohelper.completion.ChineseLookupElement
 import com.github.wszpwsren.completionwithrepohelper.completion.ChinesePrefixMatcher
+import com.github.wszpwsren.completionwithrepohelper.completion.RepoLookupElement
 import com.github.wszpwsren.completionwithrepohelper.config.PluginSettingsState
 import com.github.wszpwsren.completionwithrepohelper.utils.Pinyin
 import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElement
+import com.intellij.codeInsight.lookup.LookupElementBuilder
 import com.intellij.openapi.util.text.StringUtil
 
 /**
@@ -15,8 +17,6 @@ import com.intellij.openapi.util.text.StringUtil
  * @date 2022-8-1
  */
 open class CompletionWithRepoContributor : CompletionContributor() {
-
-    private val tips = "输入拼音补全;若无满意结果,请激活补全快捷键或给出更精确的输入"
 
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val pluginSettingsState = PluginSettingsState.instance
@@ -27,7 +27,14 @@ open class CompletionWithRepoContributor : CompletionContributor() {
         val prefix = result.prefixMatcher.prefix
         val resultSet = result
                 .withPrefixMatcher(ChinesePrefixMatcher(result.prefixMatcher))
-        resultSet.addLookupAdvertisement(tips)
+        var iterator = PluginSettingsState.instance.dictMap.iterator()
+        while (iterator.hasNext()){
+            var next = iterator.next()
+            var key = next.key
+            var value = next.value
+            val chineseLookupElement = RepoLookupElement(key, value)
+            resultSet.consume(chineseLookupElement)
+        }
         // 先跳过当前 Contributors 获取包装后的 lookupElement而后进行修改装饰
         resultSet.runRemainingContributors(parameters) { r ->
             val element = r.lookupElement

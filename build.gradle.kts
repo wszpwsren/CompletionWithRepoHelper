@@ -24,6 +24,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies{
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+}
+
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
     pluginName.set(properties("pluginName"))
@@ -113,7 +117,5 @@ tasks {
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
         channels.set(listOf(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
     }
-    dependencies{
-        implementation("com.alibaba.nacos:nacos-client:1.4.0")
-    }
+
 }

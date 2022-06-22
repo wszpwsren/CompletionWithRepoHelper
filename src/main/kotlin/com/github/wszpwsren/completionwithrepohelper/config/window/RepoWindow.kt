@@ -1,4 +1,4 @@
-package com.github.wszpwsren.completionwithrepohelper.config
+package com.github.wszpwsren.completionwithrepohelper.config.window
 
 import com.intellij.openapi.wm.ToolWindow
 import java.awt.event.ActionEvent

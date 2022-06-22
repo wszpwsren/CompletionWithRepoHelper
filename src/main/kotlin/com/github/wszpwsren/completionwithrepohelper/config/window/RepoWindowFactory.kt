@@ -1,4 +1,4 @@
-package com.github.wszpwsren.completionwithrepohelper.config
+package com.github.wszpwsren.completionwithrepohelper.config.window
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Condition

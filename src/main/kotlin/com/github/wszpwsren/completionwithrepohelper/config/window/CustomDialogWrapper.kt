@@ -1,10 +1,10 @@
-package com.github.wszpwsren.completionwithrepohelper.config
+package com.github.wszpwsren.completionwithrepohelper.config.window
 
+import com.github.wszpwsren.completionwithrepohelper.config.PluginSettingsState
 import com.google.gson.Gson
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.ui.ValidationInfo
-import io.grpc.netty.shaded.io.netty.handler.codec.http.HttpUtil
 import org.apache.commons.lang.StringUtils
 import java.awt.BorderLayout
 import java.awt.Dimension

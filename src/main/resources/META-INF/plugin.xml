@@ -21,9 +21,9 @@
                 displayName="CWR Helper"/>
         <notificationGroup id="CWR Group" displayType="STICKY_BALLOON"/>
         <!-- secondary:true表示设置在tool window bar最下方 -->
-        <toolWindow id="customer tool window"
+        <toolWindow id="CWR Window"
                     anchor="right"
-                    factoryClass="com.github.wszpwsren.completionwithrepohelper.config.RepoWindowFactory"
+                    factoryClass="com.github.wszpwsren.completionwithrepohelper.config.window.RepoWindowFactory"
                     secondary="true"/>
     </extensions>
 
