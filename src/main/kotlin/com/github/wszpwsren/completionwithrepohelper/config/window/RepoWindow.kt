@@ -16,7 +16,7 @@ class RepoWindow(toolWindow: ToolWindow) {
         private set
 
     private fun init() {
-        dialogButton = JButton("触发自定义dialog")
+        dialogButton = JButton("Synchronize Repo")
         dialogButton!!.addActionListener { e: ActionEvent? ->
             if (CustomDialogWrapper().showAndGet()) {
                 // 监听弹框消失，相当于show 和 getExitCode方法的结合

@@ -46,7 +46,11 @@ class CustomDialogWrapper : DialogWrapper(true) {
             if (config == null) {
                 return ValidationInfo("校验不通过")
             } else {
-                PluginSettingsState.instance.dictMap = Gson().fromJson(config, HashMap::class.java) as HashMap<String?, String?>
+                try {
+                    PluginSettingsState.instance.dictMap = Gson().fromJson(config, HashMap::class.java) as HashMap<String?, String?>
+                } catch (e: Exception) {
+                    return ValidationInfo("下载不通过")
+                }
                 return null
             }
         } else {
